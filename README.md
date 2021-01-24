@@ -21,6 +21,53 @@ print/x $eax # print value of specific register
 print/d $eax # print value of specific register (as int)
 ```
 
+#### General syntax
+
+```nasm
+section .data
+; db is 1 byte
+name db "string"
+name db 0xff
+name db 100
+
+; dw is 2 bytes
+name dw 0x1234
+name dw 1000
+
+; dd is 4 bytes 
+name dd 0x12341245
+name dd 10000
+```
+
+```nasm
+section .text
+
+mov eax, 3              ; move value to register
+mov [addr], byte 'h'    ; move value to memory location at pointer 
+mov [addr+5], byte '!'  ; memory location with pointer offset
+
+push 1234   ; push bytes to stack
+pop eax     ; pop value from the stack and saved it to eax
+sub esp, 4  ; allocate 4 bytes on the stack
+
+; same as push
+sub esp, 4
+mov [esp], dword 357
+
+```
+
+#### Registers
+
+Registers: 
+ * `ESP` - stack pointer
+
+#### System calls
+
+```nasm
+mov eax, 1 ; return(int code)
+mov eax, 4 ; write(int fd, char* ptr, int len)
+```
+
 #### Branches
 
 ```nasm
