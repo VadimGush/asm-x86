@@ -23,6 +23,7 @@ print/d $eax # print value of specific register (as int)
 
 #### General syntax
 
+**Data:**
 ```nasm
 section .data
 ; db is 1 byte
@@ -39,6 +40,7 @@ name dd 0x12341245
 name dd 10000
 ```
 
+**Instructions:**
 ```nasm
 section .text
 
@@ -50,6 +52,17 @@ push 1234   ; push bytes to stack
 pop eax     ; pop value from the stack and saved it to eax
 sub esp, 4  ; allocate 4 bytes on the stack
 
+; function call
+; pushes EIP to stack (so we can go back)
+; performs a jump
+call label
+ret 
+
+; same as ret
+; then we can go back
+pop eax ; move last location from stack to eax
+jmp eax ; jmp to previous location
+
 ; same as push
 sub esp, 4
 mov [esp], dword 357
@@ -60,6 +73,8 @@ mov [esp], dword 357
 
 Registers: 
  * `ESP` - stack pointer
+ * `EIP` - instruction pointer
+ * `ESB` - base pointer (in order to call functions)
 
 #### System calls
 
