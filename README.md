@@ -56,6 +56,7 @@ sub esp, 4  ; allocate 4 bytes on the stack
 ; pushes EIP to stack (so we can go back)
 ; performs a jump
 call label
+; pop EIP from the stack and jumps to it
 ret 
 
 ; same as ret
