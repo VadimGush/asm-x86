@@ -1,0 +1,9 @@
+[package]
+name = "rust-integration"
+version = "0.1.0"
+authors = ["Vadim Gush <vadim_gush@lineate.com>"]
+edition = "2018"
+build = "build.rs"
+
+[dependencies]
+libc = "0.2"
