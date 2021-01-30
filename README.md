@@ -1,6 +1,6 @@
 # Assembly x86
 
-![Build Status](https://github.com/vadimgush/asm-x86/workflows/.github/workflows/main.yml/badge.svg)
+![](https://github.com/vadimgush/asm-x86/workflows/CI/badge.svg)
 
 My learning of x86 assembly language.
 
