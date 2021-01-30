@@ -19,6 +19,9 @@ jobs:
       
       - name: Install nasm
         run: sudo apt install nasm
+      
+      - name: Install libraries for cross-platform builds
+        run: sudo apt install gcc-multilib
 
       # Runs a single command using the runners shell
       - name: Build C integration test
