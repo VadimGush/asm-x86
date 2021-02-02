@@ -46,29 +46,27 @@ name dd 10000
 ```nasm
 section .text
 
-mov eax, 3              ; move value to register
-mov [addr], byte 'h'    ; move value to memory location at pointer 
-mov [addr+5], byte '!'  ; memory location with pointer offset
+mov   eax, 3      ; Move            - move to R/M value from L/M/R
+xchg  eax, ebx    ; Swap            - swaps 2 values (R/M)
 
-push 1234   ; push bytes to stack
-pop eax     ; pop value from the stack and saved it to eax
-sub esp, 4  ; allocate 4 bytes on the stack
+inc eax           ; Increment       - adds 1
+dec eax           ; Decriment       - substractcs 1
+add eax, ebx      ; Add             - add two values and stores a result in the first one
+sub eax, ebx      ; Sub             - sub two values and stotes a result in the first one
+neg eax           ; Negative        - converts value to negative
 
-; function call
-; pushes EIP to stack (so we can go back)
-; performs a jump
-call label
-; pop EIP from the stack and jumps to it
-ret 
+push 1234         ; Push to stack   - push value to the stack (R/M/L)
+pop eax           ; Pop from stack  - pop value from the stack (R/M)
+sub esp, 4        ; Stack malloc    - allocate some amount of bytes on the stack
 
-; same as ret
-; then we can go back
-pop eax ; move last location from stack to eax
-jmp eax ; jmp to previous location
+call label        ; Function call   - pushes RIP to stack and performs a jump
+ret               ; Return          - pops RIP from stack and performs a jump
 
-; same as push
-sub esp, 4
-mov [esp], dword 357
+pop eax           ; Same as return
+jmp eax           ;
+
+sub esp, 4        ; Same as push eax
+mov [esp], eax    ;
 
 ```
 
