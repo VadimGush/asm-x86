@@ -89,7 +89,6 @@ mov rax, 60   ; exit()
 syscall       ; make system call
 ```
 
-|-------------|------------------|
 | Register    | Arguments        |
 |-------------|------------------|
 | rdi         | 1st argument     |
@@ -98,7 +97,6 @@ syscall       ; make system call
 | rcx         | 4th argument     |
 | r8          | 5th argument     |
 | r9          | 6th argument     |
-|-------------|------------------|
 
 #### Branches
 
