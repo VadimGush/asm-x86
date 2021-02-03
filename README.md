@@ -80,8 +80,13 @@ Registers:
 #### System calls
 
 ```nasm
-mov eax, 1 ; return(int code)
-mov eax, 4 ; write(int fd, char* ptr, int len)
+; system calls are defined in /usr/include/asm/unistd_64.h
+
+mov rax, 0    ; read()
+mov rax, 1    ; write()
+mov rax, 60   ; exit()
+
+syscall       ; make system call
 ```
 
 #### Branches
