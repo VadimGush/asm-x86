@@ -1,8 +1,8 @@
-# Assembly x86
+# Assembly x86 / x86_64
 
 ![](https://github.com/vadimgush/asm-x86/workflows/CI/badge.svg)
 
-My learning of x86 assembly language.
+My learning of x86 / x86_64 assembly language.
 
 ### GDB
 
